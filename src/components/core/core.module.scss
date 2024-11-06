@@ -1,0 +1,34 @@
+.core {
+    height: 2500px;
+
+    &__title {
+        top: var(--large-gutter);
+        right: var(--gutter);
+    }
+
+    &__sliding-text {
+        position: fixed;
+        bottom: 7rem;
+        font-size: 20rem;
+        top: 50%;
+        right: 0;
+        transform: translateX(100%);
+        white-space: nowrap;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 1024px) {
+    .core {
+        height: 1500px;
+
+        &__title {
+            left: var(--gutter);
+        }
+
+        &__sliding-text {
+            font-size: 8rem;
+            top: 350px;
+        }
+    }
+}

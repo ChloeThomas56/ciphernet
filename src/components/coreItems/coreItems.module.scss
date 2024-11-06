@@ -1,0 +1,46 @@
+.core-items {
+    background-color: var(--white);
+    color: var(--black);
+    position: relative;
+    z-index: 1;
+
+    li {
+        padding: 2rem 0;
+        border-top: 2px solid var(--black);
+        width: calc(100vw - (2 * var(--gutter)));
+        background-color: var(--white);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        > article {
+            width: 50%;
+            margin-left: auto;
+
+            > p {
+                color: var(--dark-grey);
+            }
+        }
+
+        &:last-child {
+            border-bottom: 2px solid var(--black);
+        }
+    }
+
+    > span {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 300px;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 1024px) {
+    .core-items {
+        li > article {
+            width: 100%;
+        }
+    }
+}

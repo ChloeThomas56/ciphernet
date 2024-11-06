@@ -1,0 +1,90 @@
+.services {
+    position: relative;
+    z-index: 2;
+    background-color: var(--black);
+
+    &__list {
+        counter-reset: item;
+    }
+
+    &__item {
+        counter-increment: item;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 4rem;
+        padding-bottom: 8rem;
+        border-top: 2px solid var(--white);
+
+        &:last-child {
+            border-bottom: 2px solid var(--white);
+        }
+
+        &__title {
+            display: flex;
+            gap: 4rem;
+            width: 45%;
+            max-width: 500px;
+            margin-bottom: 0;
+
+            &::before {
+                flex-shrink: 0;
+                content: counter(item);
+            }
+        }
+
+        &__details {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            align-items: flex-start;
+
+            > p {
+                color: var(--grey);
+            }
+
+            > a {
+                flex-shrink: 0;
+                background-color: var(--white);
+                border-radius: 4px;
+                color: var(--black);
+                padding: 0.7rem 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 1rem;
+                font-weight: 600;
+
+                > svg {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .services {
+        &__item {
+            flex-direction: column;
+            gap: 2rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+
+            &__title, &__details {
+                width: 100%;
+            }
+
+            &__title {
+                max-width: none;
+                gap: 2rem;
+            }
+
+            &__details {
+                flex-direction: column;
+                width: calc(100% - 35px - 2rem);
+                margin-left: auto;
+            }
+        }
+    }
+}
