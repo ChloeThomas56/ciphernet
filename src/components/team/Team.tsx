@@ -6,7 +6,6 @@ export default function Team() {
         {image: "/images/team_1.avif", name: "Alexandre Caron", position: "Dirigeant de CipherNet"},
         {image: "/images/team_2.avif", name: "Thomas Renaud", position: "Directeur de la sécurité réseau"},
         {image: "/images/team_3.avif", name: "Nicolas Lambert", position: "Expert en cybersécurité offensive"},
-        {image: "/images/team_4.avif", name: "Julien Moreau", position: "Responsable de la protection des données"} 
     ];
 
     return (

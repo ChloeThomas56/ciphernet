@@ -56,7 +56,7 @@ export default function CoreItems() {
                     </article>
                 </li>
             </ul>
-            <span>cipherNet</span>
+            <span>CipherNet</span>
         </section>
     )
 }

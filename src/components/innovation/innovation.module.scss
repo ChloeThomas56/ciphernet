@@ -4,6 +4,7 @@
     z-index: 2;
 
     &__list {
+        grid-template-columns: repeat(2, minmax(400px, 1fr));
         gap: var(--gutter);
         counter-reset: item;
     }
@@ -48,6 +49,10 @@
 
 @media (max-width: 1024px) {
     .innovation {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         &__item {
             height: 250px;
             padding: 1rem;
@@ -56,5 +61,11 @@
         &__illustration-container {
             display: none;
         }
+    }
+}
+
+@media (max-width: 650px) {
+    .innovation__list {
+        grid-template-columns: 1fr;
     }
 }
