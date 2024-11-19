@@ -5,8 +5,8 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
-  title: "CipherNet",
-  description: "La cybersécurité de demain",
+    title: "CipherNet",
+    description: "La cybersécurité de demain",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="fr">
             <body className={inter.className}>
                 <Header />
                 <main>{children}</main>
