@@ -2,13 +2,15 @@
 
 import styles from './header.module.scss';
 import Image from 'next/image';
-import Link from 'next/link';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { CustomLink } from '../CustomLink';
+import { useSmoothScrollingControl } from '../SmoothScrolling';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const lenis = useSmoothScrollingControl();
 
     const links = [
         {name: "Sécurité", href: "#core"},
@@ -22,6 +24,10 @@ export default function Header() {
             setIsMenuOpen(false);
         else
             setIsMenuOpen(true);
+    };
+
+    const onClickAnchor = (target: string) => {
+        lenis?.scrollTo(target, { duration: 1.5 });
     };
 
     return (
@@ -40,9 +46,9 @@ export default function Header() {
                     <ul>
                         {links.map((link, index) => (
                             <li key={index} className={styles['nav__item']}>
-                                <Link href={link.href}>
+                                <CustomLink href={link.href} onClick={() => onClickAnchor(link.href)}>
                                     {link.name}
-                                </Link>
+                                </CustomLink>
                             </li>
                         ))}
                     </ul>
@@ -69,11 +75,14 @@ export default function Header() {
                                             delay: 0.5 + index * 0.25
                                         }}
                                     >
-                                        <Link 
+                                        <CustomLink 
                                             href={link.href}
-                                            onClick={() => setIsMenuOpen(false)}>
+                                            onClick={() => {
+                                                setIsMenuOpen(false);
+                                                onClickAnchor(link.href)
+                                            }}>
                                             {link.name}
-                                        </Link>
+                                        </CustomLink>
                                     </motion.div>
                                 </li>
                             ))}

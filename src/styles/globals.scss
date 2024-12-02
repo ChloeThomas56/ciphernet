@@ -6,22 +6,6 @@
     --gutter: 3rem;
     --large-gutter: 7rem;
 }
-
-::-webkit-scrollbar {
-    width: 2px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--white);
-}
-
-::-webkit-scrollbar-track {
-    background: var(--black);
-}
-
-html {
-    scroll-behavior: smooth;
-}
   
 html,
 body {
@@ -31,6 +15,8 @@ body {
 
 html {
     background-color: var(--white);
+    scrollbar-width: thin;
+    scrollbar-color: var(--white) var(--black);
 }
 
 body {

@@ -49,36 +49,38 @@ export default function Innovation() {
     return (
         <section id="innovation" ref={innovationSection} className={styles['innovation']}>
             <h2>Innovation</h2>
-            <ul className={`grid ${styles['innovation__list']}`}>
-                <li className={`numbered-item ${styles['innovation__item']}`}>
-                    <h3>
-                        Des solutions de sécurité quantique pour contrer les cyberattaques de demain.
-                    </h3>
-                </li>
-                <li className={`numbered-item ${styles['innovation__item']}`}>
-                    <h3>
-                        Une authentification biométrique avancée qui garantit une sécurité sans faille.
-                    </h3>
-                </li>
-                <li className={`numbered-item ${styles['innovation__item']}`}>
-                    <h3>
-                        Des algorithmes de chiffrement adaptatifs qui évoluent face aux nouvelles menaces.
-                    </h3>
-                </li>
-                <li className={`numbered-item ${styles['innovation__item']}`}>
-                    <h3>
-                        Une détection basée sur des réseaux neuronaux pour une précision sans précédent.
-                    </h3>
-                </li>
-            </ul>
-            <div className={styles['innovation__illustration-container']}>
-                <Image 
-                    width={101}
-                    height={101}
-                    ref={wheel}
-                    alt="Illustration de roue"
-                    src="/images/gear.svg"
-                />
+            <div className={styles['innovation__content']}>
+                <ul className={`grid ${styles['innovation__list']}`}>
+                    <li className={`numbered-item ${styles['innovation__item']}`}>
+                        <h3>
+                            Des solutions de sécurité quantique pour contrer les cyberattaques de demain.
+                        </h3>
+                    </li>
+                    <li className={`numbered-item ${styles['innovation__item']}`}>
+                        <h3>
+                            Une authentification biométrique avancée qui garantit une sécurité sans faille.
+                        </h3>
+                    </li>
+                    <li className={`numbered-item ${styles['innovation__item']}`}>
+                        <h3>
+                            Des algorithmes de chiffrement adaptatifs qui évoluent face aux nouvelles menaces.
+                        </h3>
+                    </li>
+                    <li className={`numbered-item ${styles['innovation__item']}`}>
+                        <h3>
+                            Une détection basée sur des réseaux neuronaux pour une précision sans précédent.
+                        </h3>
+                    </li>
+                </ul>
+                <div className={styles['innovation__illustration-container']}>
+                    <Image 
+                        width={101}
+                        height={101}
+                        ref={wheel}
+                        alt="Illustration de roue"
+                        src="/images/gear.svg"
+                    />
+                </div>
             </div>
         </section>
     )

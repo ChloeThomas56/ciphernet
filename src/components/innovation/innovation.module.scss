@@ -3,6 +3,10 @@
     position: relative;
     z-index: 2;
 
+    &__content {
+        position: relative;
+    }
+
     &__list {
         grid-template-columns: repeat(2, minmax(400px, 1fr));
         gap: var(--gutter);
@@ -33,7 +37,7 @@
 
     &__illustration-container {
         position: absolute;
-        top: calc(50% + var(--large-gutter));
+        top: 50%;
         left: 50%;
         height: 400px;
         z-index: 0;

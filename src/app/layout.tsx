@@ -3,6 +3,7 @@ import "../styles/globals.scss";
 import { inter } from '@/lib/font';
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 export const metadata: Metadata = {
     title: "CipherNet",
@@ -17,9 +18,11 @@ export default function RootLayout({
     return (
         <html lang="fr">
             <body className={inter.className}>
-                <Header />
-                <main>{children}</main>
-                <Footer />
+                <SmoothScrolling>
+                    <Header />
+                    <main>{children}</main>
+                    <Footer />
+                </SmoothScrolling>
             </body>
         </html>
     );
