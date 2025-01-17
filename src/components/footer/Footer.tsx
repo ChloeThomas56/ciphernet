@@ -6,7 +6,6 @@ export default function Footer() {
     const links = [
         {name: "Sécurité", href: "#core"},
         {name: "Services", href: "#services"},
-        {name: "L'équipe", href: "#team"},
         {name: "Innovation", href: "#innovation"}
     ];
 

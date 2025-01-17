@@ -15,7 +15,6 @@ export default function Header() {
     const links = [
         {name: "Sécurité", href: "#core"},
         {name: "Services", href: "#services"},
-        {name: "L'équipe", href: "#team"},
         {name: "Innovation", href: "#innovation"}
     ];
 
@@ -72,7 +71,7 @@ export default function Header() {
                                         animate={{ y: 0 }}
                                         transition={{ 
                                             duration: 0.5, 
-                                            delay: 0.5 + index * 0.25
+                                            delay: 0.5
                                         }}
                                     >
                                         <CustomLink 

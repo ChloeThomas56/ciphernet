@@ -1,9 +1,14 @@
+import { Viewport } from "next";
 import type { Metadata } from "next";
 import "../styles/globals.scss";
 import { inter } from '@/lib/font';
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import SmoothScrolling from "@/components/SmoothScrolling";
+
+export const viewport: Viewport = {
+    interactiveWidget: 'resizes-content'
+};
 
 export const metadata: Metadata = {
     title: "CipherNet",
