@@ -49,9 +49,9 @@ export default function Core() {
             if (isDesktop) {
                 gsap.fromTo(
                     coreSection.current,
-                    { backgroundColor: "#000000" },
+                    { backgroundColor: "#0c0c0c" },
                     {
-                        backgroundColor: "#ffffff",
+                        backgroundColor: "#faf8f8",
                         scrollTrigger: {
                             trigger: coreSection.current,
                             start: 'center top',

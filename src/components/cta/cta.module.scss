@@ -1,0 +1,29 @@
+.cta {
+    background-color: var(--light);
+    border: 1px solid var(--light);
+    border-radius: 4px;
+    color: var(--dark);
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: fit-content;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    > svg {
+        font-size: 1.3rem;
+    }
+
+    &:hover {
+        background-color: transparent;
+        color: var(--light);
+    }
+}
+
+@media (max-width: 1024px) {
+    .cta {
+        margin: 1px;
+    }
+}

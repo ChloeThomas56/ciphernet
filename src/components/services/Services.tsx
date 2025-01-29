@@ -1,12 +1,11 @@
 'use client';
 
 import styles from './services.module.scss';
-import Link from 'next/link';
-import { MdArrowOutward } from "react-icons/md";
 import { useEffect, useRef } from 'react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import useWindowSize from '@/hooks/useWindowSize';
+import Cta from '../cta/Cta';
 
 export default function Services() {
     const servicesSection   = useRef<HTMLDivElement | null>(null);
@@ -73,10 +72,9 @@ export default function Services() {
                             <p className="text">
                                 {item.text}
                             </p>
-                            <Link href="#services">
+                            <Cta href="#services">
                                 En savoir plus
-                                <MdArrowOutward />
-                            </Link>
+                            </Cta>
                         </div>
                     </li>
                 ))}

@@ -1,30 +1,19 @@
 .footer {
     padding: var(--gutter);
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--light);
+    color: var(--light);
     position: relative;
     z-index: 2;
-
-    a {
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: var(--dark-grey);
-        }
-    }
 
     &__content {
         display: flex;
         justify-content: space-between;
+        mix-blend-mode: difference;
     }
 
     &__logo-container {
         mix-blend-mode: difference;
-        margin-bottom: 1rem;
-
-        > img {
-            height: 100%;
-        }
+        display: flex;
     }
 
     &__contact-link {
@@ -34,14 +23,16 @@
 
     &__nav > ul {
         display: flex;
-        column-gap: var(--gutter);
-        font-size: 1.1rem;
+        align-items: center;
+        column-gap: var(--gutter);        
     }
 
     &__copyright {
-        padding-top: 2rem;
-        margin-top: 3rem;
-        border-top: 2px solid var(--black);
+        padding-top: var(--gutter);
+        margin-top: var(--gutter);
+        border-top: 2px solid var(--light);
+        mix-blend-mode: difference;
+        text-align: center;
     }
 }
 
@@ -49,7 +40,7 @@
     .footer {
         &__content {
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         &__nav > ul {

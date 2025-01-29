@@ -1,7 +1,7 @@
 .services {
     position: relative;
     z-index: 2;
-    background-color: var(--black);
+    background-color: var(--dark);
 
     &__list {
         counter-reset: item;
@@ -13,10 +13,10 @@
         justify-content: space-between;
         padding-top: 4rem;
         padding-bottom: 8rem;
-        border-top: 2px solid var(--white);
+        border-top: 2px solid var(--dark-grey);
 
         &:last-child {
-            border-bottom: 2px solid var(--white);
+            border-bottom: 2px solid var(--dark-grey);
         }
 
         &__title {
@@ -45,9 +45,9 @@
 
             > a {
                 flex-shrink: 0;
-                background-color: var(--white);
+                background-color: var(--light);
                 border-radius: 4px;
-                color: var(--black);
+                color: var(--dark);
                 padding: 0.7rem 1rem;
                 display: flex;
                 align-items: center;

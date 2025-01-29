@@ -1,14 +1,21 @@
 .core-items {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--light);
+    color: var(--dark);
     position: relative;
     z-index: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &__container {
+        padding-top: var(--large-gutter);
+        padding-bottom: var(--large-gutter);
+    }
 
     li {
         padding: 2rem 0;
-        border-top: 2px solid var(--black);
+        border-top: 2px solid var(--dark-grey);
         width: calc(100vw - (2 * var(--gutter)));
-        background-color: var(--white);
+        background-color: var(--light);
         overflow: hidden;
         position: relative;
         z-index: 1;
@@ -23,11 +30,11 @@
         }
 
         &:last-child {
-            border-bottom: 2px solid var(--black);
+            border-bottom: 2px solid var(--dark-grey);
         }
     }
 
-    > span {
+    span {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);

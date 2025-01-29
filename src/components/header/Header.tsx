@@ -1,12 +1,14 @@
 'use client';
 
 import styles from './header.module.scss';
+import { useState } from 'react';
+import { useSmoothScrollingControl } from '../SmoothScrolling';
+import { AnimatePresence, motion } from 'framer-motion';
+import { textReveal } from '@/lib/variants';
 import Image from 'next/image';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { CustomLink } from '../CustomLink';
-import { useSmoothScrollingControl } from '../SmoothScrolling';
+import Link from 'next/link';
+import Cta from '../cta/Cta';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,30 +32,40 @@ export default function Header() {
     };
 
     return (
-        <header className={styles['header']}>
-            <div className={`logo-container ${styles['header__logo-container']}`}>
-                <Image
-                    src="/images/logo.svg"
-                    alt="Logo CipherNet"
-                    width={100}
-                    height={100}
-                    priority
-                />
-            </div>
-            <div className={styles['header__menu-container']}>
-                <nav className={styles['nav--desktop']}>
-                    <ul>
-                        {links.map((link, index) => (
-                            <li key={index} className={styles['nav__item']}>
-                                <CustomLink href={link.href} onClick={() => onClickAnchor(link.href)}>
-                                    {link.name}
-                                </CustomLink>
+        <>
+            <header className={styles['header']}>
+                <div className={`logo-container ${styles['header__logo-container']}`}>
+                    <Link href="/" onClick={() => lenis?.scrollTo(0, { duration: 1.5 })}>
+                        <Image
+                            src="/images/logo.svg"
+                            alt="Logo CipherNet"
+                            width={100}
+                            height={100}
+                            priority
+                            className="logo"
+                        />
+                    </Link>
+                </div>
+                <div className={styles['header__menu-container']}>
+                    <nav className={styles['nav--desktop']}>
+                        <ul>
+                            {links.map((link, index) => (
+                                <li key={index} className="nav-item">
+                                    <Link href={link.href} onClick={() => onClickAnchor(link.href)}>
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                            <li>
+                                <Cta href="#">
+                                    Contact
+                                </Cta>
                             </li>
-                        ))}
-                    </ul>
-                </nav>
-                <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
-            </div>
+                        </ul>
+                    </nav>
+                    <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
+                </div>
+            </header>
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.nav
@@ -67,29 +79,39 @@ export default function Header() {
                             {links.map((link, index) => (
                                 <li key={index}>
                                     <motion.div
-                                        initial={{ y: "100%" }}
-                                        animate={{ y: 0 }}
-                                        transition={{ 
-                                            duration: 0.5, 
-                                            delay: 0.5
-                                        }}
+                                        variants={textReveal}
+                                        initial="initial"
+                                        animate="enter"
+                                        custom={{ delay: 0.5 }}
                                     >
-                                        <CustomLink 
+                                        <Link 
                                             href={link.href}
                                             onClick={() => {
                                                 setIsMenuOpen(false);
                                                 onClickAnchor(link.href)
                                             }}>
                                             {link.name}
-                                        </CustomLink>
+                                        </Link>
                                     </motion.div>
                                 </li>
                             ))}
+                            <li>
+                                <motion.div
+                                    variants={textReveal}
+                                    initial="initial"
+                                    animate="enter"
+                                    custom={{ delay: 0.5 }}
+                                >
+                                    <Cta href="#">
+                                        Contact
+                                    </Cta>
+                                </motion.div>
+                            </li>
                         </ul>
                     </motion.nav>
                 )}
             </AnimatePresence>
-        </header>
+        </>
     );
 }
   

@@ -1,20 +1,16 @@
 .header {
-    position: relative;
-
-    &__logo-container, &__menu-container {
-        position: fixed;
-        z-index: 10;
-        top: 1.5rem;
-        height: 50px;
-    }
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+    padding: calc(var(--gutter) / 2) var(--gutter);
+    mix-blend-mode: difference;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     &__logo-container {
-        left: var(--gutter);
-
-        > img {
-            object-fit: cover;
-            height: 100%;
-        }
+        display: flex;
+        align-items: center;
     }
 
     &__menu-container {
@@ -28,34 +24,25 @@
 .nav--desktop > ul {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: var(--gutter);
 }
 
-.nav__item {
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-
-    &:hover {
-        color: var(--grey);
-    }
+.nav--mobile {
+    display: none;
 }
 
 @media (max-width: 1024px) {
-    .header__logo-container, .header__menu-container {
-        height: 40px;
-    }
-
     .nav--desktop {
         display: none;
     }
 
     .nav--mobile {
+        display: block;
         position: fixed;
         z-index: 3;
         right: var(--gutter);
         top: 80px;
-        background-color: var(--white);
-        color: var(--black);
+        background-color: var(--light);
         width: calc(100% - (2 * var(--gutter)));
         max-width: 350px;
         border-radius: 10px;
@@ -68,6 +55,7 @@
             gap: 0.5rem;
             font-size: 1.5rem;
             font-weight: 600;
+            mix-blend-mode: difference;
 
             > li {
                 overflow: hidden;

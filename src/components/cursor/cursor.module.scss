@@ -1,0 +1,30 @@
+.cursor {
+    position: fixed;
+    border-radius: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%) scale(1);
+
+    &-inner {
+        width: 5px;
+        height: 5px;
+        background-color: var(--light);
+    }
+
+    &-outer {
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+        border: 2px solid #c7c7c7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cursor {
+        display: none;
+    }
+}

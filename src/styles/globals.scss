@@ -1,8 +1,8 @@
 :root {
-    --black: #000000;
-    --white: #ffffff;
-    --grey: #a1a1a1;
-    --dark-grey: #474747;
+    --dark: #0c0c0c;
+    --light: #faf8f8;
+    --grey: #d3d3d3;
+    --dark-grey: #373737;
     --gutter: 3rem;
     --large-gutter: 7rem;
 }
@@ -10,20 +10,22 @@
 html,
 body {
     max-width: 100vw;
+    width: 100vw;
     overflow-x: hidden;
 }
 
 html {
-    background-color: var(--white);
+    background-color: var(--light);
     scrollbar-width: thin;
-    scrollbar-color: var(--white) var(--black);
+    scrollbar-color: var(--light) var(--dark);
 }
 
 body {
-    color: var(--white);
-    background: var(--black);
+    color: var(--light);
+    background: var(--dark);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
 }
 
 * {
@@ -49,7 +51,6 @@ img {
 }
 
 h2 {
-    text-align: right;
     font-size: 4rem;
     margin-bottom: var(--large-gutter);
 }
@@ -68,16 +69,11 @@ section {
     padding: var(--large-gutter) var(--gutter);
 }
 
-.logo-container {
-    width: 50px;
-    height: 50px;
-}
-
 .numbered-item::before {
     font-size: 1.5rem;
     width: 50px;
     height: 50px;
-    border: 1px solid var(--white);
+    border: 2px solid var(--dark-grey);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -93,9 +89,39 @@ section {
     display: grid;
 }
 
+.nav-item {
+    font-size: 1.1rem;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        background-color: var(--light);
+        pointer-events: none;
+        transform-origin: 100% 50%;
+        transform: scale3d(0, 1, 1);
+        transition: transform 0.3s ease-out;
+    }
+
+    &:hover::before {
+        transform-origin: 0% 50%;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+}
+
 @media (max-width: 1024px) {
     :root {
-        --gutter: 1.5rem;
+        --gutter: 1rem;
         --large-gutter: 5rem;
     }
 
@@ -108,11 +134,6 @@ section {
         font-size: 1.5rem;
     }
 
-    .logo-container {
-        width: 40px;
-        height: 40px;
-    }
-
     .numbered-item::before {
         width: 35px;
         height: 35px;
@@ -121,6 +142,20 @@ section {
 
     .text {
         font-size: 1rem;
+    }
+
+    .logo {
+        width: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        font-size: 1rem;
+
+        &::before {
+            display: none;
+        }
     }
 }
   

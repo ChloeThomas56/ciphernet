@@ -4,6 +4,7 @@ import styles from './hero.module.scss';
 import useWindowSize from '@/hooks/useWindowSize';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { textReveal, illustrationScaleUp } from '@/lib/variants';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -26,11 +27,6 @@ export default function Hero() {
 
     }, [windowSize, isDesktop]);
 
-    const variants = {
-        hidden: { y: "100%" },
-        visible: { y: 0 },
-    };
-
     return (
       <section className={styles['hero']}>
         <div ref={hero}>
@@ -38,10 +34,10 @@ export default function Hero() {
                 <div className={styles['hero__line-wrapper']}>
                     <motion.h1 
                         ref={title} 
-                        initial="hidden" 
-                        animate="visible" 
-                        variants={variants} 
-                        transition={{ duration: 0.5, delay: 0.3 }}
+                        initial="initial" 
+                        animate="enter" 
+                        variants={textReveal}
+                        custom={{ delay: 0.3 }}
                     >
                         CipherNet
                     </motion.h1>
@@ -49,10 +45,10 @@ export default function Hero() {
                 <div className={styles['hero__line-wrapper']}>
                     <motion.p 
                         ref={adjustableText} 
-                        initial="hidden" 
-                        animate="visible" 
-                        variants={variants} 
-                        transition={{ duration: 0.5, delay: 0.6 }}
+                        initial="initial" 
+                        animate="enter" 
+                        variants={textReveal} 
+                        custom={{ delay: 0.6 }}
                     >
                         Plongez dans le <span>cyberspace</span>
                     </motion.p>
@@ -60,10 +56,10 @@ export default function Hero() {
                 <div className={styles['hero__line-wrapper']}>
                     <motion.p 
                         ref={text} 
-                        initial="hidden" 
-                        animate="visible" 
-                        variants={variants} 
-                        transition={{ duration: 0.5, delay: 0.9 }}
+                        initial="initial" 
+                        animate="enter" 
+                        variants={textReveal} 
+                        custom={{ delay: 0.9 }}
                     >
                         Sécurisez demain
                     </motion.p>
@@ -71,9 +67,9 @@ export default function Hero() {
             </div>
             <div className={styles['hero__illustration-container']}>
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9, rotate: -5  }} 
-                    animate={{ opacity: 0.6, scale: 1, rotate: 0 }} 
-                    transition={{ duration: 1.5, delay: 1.4, ease: [0.19, 1, 0.22, 1] }}
+                    variants={illustrationScaleUp}
+                    initial="initial"
+                    animate="enter"
                     style={{height: '100%'}}
                 >
                     <Image 
