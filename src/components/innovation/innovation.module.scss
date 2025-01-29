@@ -12,10 +12,10 @@
 
     &__content {
         position: relative;
+        width: calc(100vw - 2* var(--gutter));
     }
 
     &__list {
-        width: calc(100vw - (2 * var(--gutter)));
         grid-template-columns: repeat(2, minmax(400px, 1fr));
         gap: var(--gutter);
         counter-reset: item;
